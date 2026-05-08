@@ -4279,6 +4279,10 @@ const char* ImGui::GetVersion()
     return IMGUI_VERSION;
 }
 
+ImGuiIO* ImGui::GetIOPtr() {
+    if (GImGui == NULL)return nullptr;
+    return &GImGui->IO;
+}
 ImGuiIO& ImGui::GetIO()
 {
     IM_ASSERT(GImGui != NULL && "No current context. Did you call ImGui::CreateContext() and ImGui::SetCurrentContext() ?");
